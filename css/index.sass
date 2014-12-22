@@ -1,0 +1,109 @@
+//placeholder
+%user-select
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+//mixin
+@mixin color-group($bg-color,$border-color)
+  background-color: $bg-color
+  border-color: $border-color
+
+//variable
+$primary-color: #337ab7
+
+.btn
+  display: inline-block
+  padding: 6px 12px
+  margin-bottom: 0
+  font-size: 14px
+  font-weight: 400
+  line-height: 1.4
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  -ms-touch-action: manipulation
+  touch-action: manipulation
+  cursor: pointer
+  @extend %user-select
+  background-image: none
+  border: 1px solid transparent
+  border-radius: 4px
+
+.btn[disabled]
+  pointer-events: none
+  cursor: not-allowed
+  filter: alpha(opacity = 65)
+  @extend %user-select
+  opacity: .65
+
+.btn-default
+  color: #333
+  @include color-group(#fff, #ccc)
+  &.active
+    @include color-group(#e6e6e6, #adadad)
+.btn-default[disabled]
+  @include color-group(#fff, #ccc)
+  
+.btn-primary
+  color: #fff
+  @include color-group($primary-color, #2e6da4)
+  &.active
+    @include color-group(#286090, #204d74)
+.btn-primary[disabled]
+  @include color-group($primary-color, #2e6da4)
+
+.btn-success
+  color: #fff
+  @include color-group(#5cb85c, #4cae4c)
+  
+.btn-info
+  color: #fff
+  @include color-group(#5bc0de, #46b8da)
+
+.btn-warning
+  color: #fff
+  @include color-group(#f0ad4e, #eea236)
+
+.btn-danger
+  color: #fff
+  @include color-group(#d9534f, #d43f3a)
+
+.btn-lg
+  padding: 10px 16px
+  font-size: 18px
+  line-height: 1.33
+  border-radius: 6px
+  
+.btn-sm
+  padding: 5px 10px
+  font-size: 12px
+  line-height: 1.5
+  border-radius: 3px
+
+.btn-xs
+  padding: 1px 5px
+  font-size: 12px
+  line-height: 1.5
+  border-radius: 3px
+
+.example-bg-classes
+  p
+    padding: 15px
+
+.bg-primary
+  color: #fff
+  background-color: $primary-color
+
+.bg-success
+  background-color: #dff0d8
+
+.bg-info
+  background-color: #d9edf7
+
+.bg-warning
+  background-color: #fcf8e3
+
+.bg-danger
+  background-color: #f2dede

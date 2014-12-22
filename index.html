@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang=en lang=en>
+<head>
+  <meta http-equiv=Content-Type content="text/html; charset=UTF-8"/>
+  <title> File: SASS_REFERENCE &mdash; Sass Documentation </title>
+  <link rel=stylesheet href="css/base.css" charset=utf-8/>
+  <link rel=stylesheet href="css/docs.css" charset=utf-8/>
+  <link rel=stylesheet href="css/index.css" charset=utf-8/>
+</head>
+<body>
+<div id=header>
+  <div id=menu><a href="_index.html">UI-Demo</a> &raquo; <span
+      class=title>This demo code can use without any framework.</span>
+
+  </div>
+  <div class=clear></div>
+</div>
+<div id=content>
+  <div id=filecontents><h1 id=sass_syntactically_awesome_stylesheets>Sass References</h1>
+
+    <div class=maruku_toc>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#syntax">Syntax</a></li>
+        <li><a href="#using_sass">Using Sass</a>
+          <ul>
+            <li><a href="#rackrailsmerb_plugin">Rack/Rails/Merb Plugin</a></li>
+            <li><a href="#caching">Caching</a></li>
+            <li><a href="#options">Options</a></li>
+            <li><a href="#syntax_selection">Syntax Selection</a></li>
+            <li><a href="#encodings">Encodings</a></li>
+          </ul>
+        </li>
+        <li><a href="#css_extensions">CSS Extensions</a>
+          <ul>
+            <li><a href="#nested_rules">Nested Rules</a></li>
+            <li><a href="#parent-selector">Referencing Parent Selectors: <code>&amp;</code></a></li>
+            <li><a href="#nested_properties">Nested Properties</a></li>
+            <li><a href="#placeholder_selectors_">Placeholder Selectors: <code>%foo</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#comments">Comments: <code>/* */</code> and <code>//</code></a></li>
+        <li><a href="#sassscript">SassScript</a>
+          <ul>
+            <li><a href="#interactive_shell">Interactive Shell</a></li>
+            <li><a href="#variables_">Variables: <code>$</code></a></li>
+            <li><a href="#data_types">Data Types</a>
+              <ul>
+                <li><a href="#sass-script-strings">Strings</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#maps">Maps</a></li>
+                <li><a href="#colors">Colors</a></li>
+              </ul>
+            </li>
+            <li><a href="#operations">Operations</a>
+              <ul>
+                <li><a href="#number_operations">Number Operations</a>
+                  <ul>
+                    <li><a href="#division-and-slash">Division and <code>/</code></a></li>
+                  </ul>
+                </li>
+                <li><a href="#color_operations">Color Operations</a></li>
+                <li><a href="#string_operations">String Operations</a></li>
+                <li><a href="#boolean_operations">Boolean Operations</a></li>
+                <li><a href="#list_operations">List Operations</a></li>
+              </ul>
+            </li>
+            <li><a href="#parentheses">Parentheses</a></li>
+            <li><a href="#functions">Functions</a>
+              <ul>
+                <li><a href="#keyword_arguments">Keyword Arguments</a></li>
+              </ul>
+            </li>
+            <li><a href="#interpolation_">Interpolation: <code>#{}</code></a></li>
+            <li><a href="#parent-script"><code>&amp;</code> in SassScript</a></li>
+            <li><a href="#variable_defaults_">Variable Defaults: <code>!default</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#directives"><code>@</code>-Rules and Directives</a>
+          <ul>
+            <li><a href="#import"><code>@import</code></a>
+              <ul>
+                <li><a href="#partials">Partials</a></li>
+                <li><a href="#nested-import">Nested <code>@import</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#media"><code>@media</code></a></li>
+            <li><a href="#extend"><code>@extend</code></a>
+              <ul>
+                <li><a href="#how_it_works">How it Works</a></li>
+                <li><a href="#extending_complex_selectors">Extending Complex Selectors</a></li>
+                <li><a href="#multiple_extends">Multiple Extends</a></li>
+                <li><a href="#chaining_extends">Chaining Extends</a></li>
+                <li><a href="#selector_sequences">Selector Sequences</a>
+                  <ul>
+                    <li><a href="#merging_selector_sequences">Merging Selector Sequences</a></li>
+                  </ul>
+                </li>
+                <li><a href="#placeholders"><code>@extend</code>-Only Selectors</a></li>
+                <li><a href="#the__flag">The <code>!optional</code> Flag</a></li>
+                <li><a href="#_in_directives"><code>@extend</code> in Directives</a></li>
+              </ul>
+            </li>
+            <li><a href="#at-root"><code>@at-root</code></a>
+              <ul>
+                <li><a href="#_and_"><code>@at-root (without: ...)</code> and <code>@at-root (with:
+                  ...)</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#_5"><code>@debug</code></a></li>
+            <li><a href="#_6"><code>@warn</code></a></li>
+            <li><a href="#_7"><code>@error</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#control_directives__expressions">Control Directives &amp; Expressions</a>
+          <ul>
+            <li><a href="#_8"><code>if()</code></a></li>
+            <li><a href="#_9"><code>@if</code></a></li>
+            <li><a href="#_10"><code>@for</code></a></li>
+            <li><a href="#each-directive"><code>@each</code></a>
+              <ul>
+                <li><a href="#each-multi-assign">Multiple Assignment</a></li>
+              </ul>
+            </li>
+            <li><a href="#_12"><code>@while</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#mixins">Mixin Directives</a>
+          <ul>
+            <li><a href="#defining_a_mixin">Defining a Mixin: <code>@mixin</code></a></li>
+            <li><a href="#including_a_mixin">Including a Mixin: <code>@include</code></a></li>
+            <li><a href="#mixin-arguments">Arguments</a>
+              <ul>
+                <li><a href="#keyword_arguments_2">Keyword Arguments</a></li>
+                <li><a href="#variable_arguments">Variable Arguments</a></li>
+              </ul>
+            </li>
+            <li><a href="#mixin-content">Passing Content Blocks to a Mixin</a>
+              <ul>
+                <li><a href="#variable_scope_and_content_blocks">Variable Scope and Content Blocks</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#function_directives">Function Directives</a></li>
+        <li><a href="#output_style">Output Style</a>
+          <ul>
+            <li><a href="#_13"><code>:nested</code></a></li>
+            <li><a href="#_14"><code>:expanded</code></a></li>
+            <li><a href="#_15"><code>:compact</code></a></li>
+            <li><a href="#_16"><code>:compressed</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#extending_sass">Extending Sass</a>
+          <ul>
+            <li><a href="#defining_custom_sass_functions">Defining Custom Sass Functions</a></li>
+            <li><a href="#cache_stores">Cache Stores</a></li>
+            <li><a href="#custom_importers">Custom Importers</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <p>Click <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html">HERE</a> to see what is SASS</p>
+
+    <p>
+      If you want use components in this page, can just copy the follow sass code to your project sass file(Or, css part
+      to your css file).
+    </p>
+
+    <h1 id=features>Buttons</h1>
+
+    <h2>Options</h2>
+
+    <p>
+
+    <div class="bs-example">
+      <button type="button" class="btn btn-default">Default</button>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+    </div>
+    </p>
+        <pre class="code ruby"><code class="ruby"><span>
+            %user-select
+              -webkit-user-select: none
+              -moz-user-select: none
+              -ms-user-select: none
+              user-select: none
+            @mixin color-group($bg-color,$border-color)
+              background-color: $bg-color
+              border-color: $border-color
+            $primary-color: #337ab7
+          
+            .btn
+              display: inline-block
+              padding: 6px 12px
+              margin-bottom: 0
+              font-size: 14px
+              font-weight: 400
+              line-height: 1.4
+              text-align: center
+              white-space: nowrap
+              vertical-align: middle
+              -ms-touch-action: manipulation
+              touch-action: manipulation
+              cursor: pointer
+              @extend %user-select
+              background-image: none
+              border: 1px solid transparent
+              border-radius: 4px</span>
+
+          <span class="c">&lt;!-- Standard button --&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span
+            class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Default<span
+            class="nt">&lt;/button&gt;</span>
+            <span>.btn-default
+              color: #333
+              @include color-group(#fff,#ccc)
+            </span>
+          <span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span
+            class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Primary<span
+            class="nt">&lt;/button&gt;</span>
+            <span>
+            .btn-primary
+              color: #fff
+              @include color-group($primary-color,#2e6da4)
+            </span>
+          <span class="c">&lt;!-- Indicates a successful or positive action --&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span
+            class="na">class=</span><span class="s">"btn btn-success"</span><span class="nt">&gt;</span>Success<span
+            class="nt">&lt;/button&gt;</span>
+            <span>.btn-success
+              color: #fff
+              @include color-group(#5cb85c,#4cae4c)
+            </span>
+          <span class="c">&lt;!-- Contextual button for informational alert messages --&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span
+            class="na">class=</span><span class="s">"btn btn-info"</span><span class="nt">&gt;</span>Info<span
+            class="nt">&lt;/button&gt;</span>
+            <span>.btn-info
+              color: #fff
+              @include color-group(#5bc0de,#46b8da)
+            </span>
+          <span class="c">&lt;!-- Indicates caution should be taken with this action --&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span
+            class="na">class=</span><span class="s">"btn btn-warning"</span><span class="nt">&gt;</span>Warning<span
+            class="nt">&lt;/button&gt;</span>
+            <span>.btn-warning
+              color: #fff
+              @include color-group(#f0ad4e,#eea236)
+            </span>
+          <span class="c">&lt;!-- Indicates a dangerous or potentially negative action --&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span
+            class="na">class=</span><span class="s">"btn btn-danger"</span><span class="nt">&gt;</span>Danger<span
+            class="nt">&lt;/button&gt;</span>
+            <span>.btn-danger
+              color: #fff
+              @include color-group(#d9534f,#d43f3a)
+            </span>
+        </code>
+        </pre>
+    <h2>Sizes</h2>
+
+    <p>
+      <button type="button" class="btn btn-primary btn-lg">Large button</button>
+      <button type="button" class="btn btn-default btn-lg">Large button</button>
+    </p>
+    <p>
+      <button type="button" class="btn btn-primary">Default button</button>
+      <button type="button" class="btn btn-default">Default button</button>
+    </p>
+    <p>
+      <button type="button" class="btn btn-primary btn-sm">Small button</button>
+      <button type="button" class="btn btn-default btn-sm">Small button</button>
+    </p>
+    <p>
+      <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+      <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+    </p>
+        <pre class="code ruby"><code>
+          .btn-lg
+            padding: 10px 16px
+            font-size: 18px
+            line-height: 1.33
+            border-radius: 6px
+
+          .btn-sm
+            padding: 5px 10px
+            font-size: 12px
+            line-height: 1.5
+            border-radius: 3px
+
+          .btn-xs
+            padding: 1px 5px
+            font-size: 12px
+            line-height: 1.5
+            border-radius: 3px</code>
+        </pre>
+    <h2 id=syntax>States</h2>
+
+    <button type="button" class="btn btn-primary btn-lg active">Primary button</button>
+    <button type="button" class="btn btn-default btn-lg active">Button</button>
+    <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Primary button</button>
+    <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
+        <pre class="code ruby"><code class="ruby">
+          .btn[disabled]
+            pointer-events: none
+            cursor: not-allowed
+            filter: alpha(opacity = 65)
+            @extend %user-select
+            opacity: .65
+          .btn-default
+            &.active
+              background-color: #e6e6e6
+              border-color: #adadad
+          .btn-default[disabled]
+            background-color: #fff
+            border-color: #ccc
+          .btn-primary
+            &.active
+              background-color: #286090
+              border-color: #204d74
+          .btn-primary[disabled]
+            background-color: $primary-color
+            border-color: #2e6da4
+        </code></pre>
+    </p>
+
+    <h1>Helper classes</h1>
+    <h2>Contextual backgrounds</h2>
+    <div class="example-bg-classes">
+      <p class="bg-primary">这是有背景的字</p>
+      <p class="bg-success">这是有背景的字</p>
+      <p class="bg-info">这是有背景的字</p>
+      <p class="bg-warning">这是有背景的字</p>
+      <p class="bg-danger">这是有背景的字</p>
+    </div>
+    <pre class="code ruby"><code class="ruby">
+    .bg-primary
+      color: #fff
+      background-color: $primary-color
+
+    .bg-success
+      background-color: #dff0d8
+
+    .bg-info
+      background-color: #d9edf7
+
+    .bg-warning
+      background-color: #fcf8e3
+
+    .bg-danger
+      background-color: #f2dede
+    </code></pre>
+
+  </div>
+</div>
+<div id=footer> Generated on Mon Nov 24 17:44:40 2014 by <a href="//yardoc.org" title="Yay! A Ruby Documentation Tool"
+                                                            target=_parent>yard</a> 0.8.7.4 (ruby-2.0.0).
+</div>
+</body>
+</html>

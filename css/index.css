@@ -1,0 +1,111 @@
+.btn, .btn[disabled] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+
+.btn[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  opacity: 0.65; }
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc; }
+  .btn-default.active {
+    background-color: #e6e6e6;
+    border-color: #adadad; }
+
+.btn-default[disabled] {
+  background-color: #fff;
+  border-color: #ccc; }
+
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4; }
+  .btn-primary.active {
+    background-color: #286090;
+    border-color: #204d74; }
+
+.btn-primary[disabled] {
+  background-color: #337ab7;
+  border-color: #2e6da4; }
+
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c; }
+
+.btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da; }
+
+.btn-warning {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236; }
+
+.btn-danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a; }
+
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px; }
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px; }
+
+.btn-xs {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px; }
+
+.example-bg-classes p {
+  padding: 15px; }
+
+.bg-primary {
+  color: #fff;
+  background-color: #337ab7; }
+
+.bg-success {
+  background-color: #dff0d8; }
+
+.bg-info {
+  background-color: #d9edf7; }
+
+.bg-warning {
+  background-color: #fcf8e3; }
+
+.bg-danger {
+  background-color: #f2dede; }
+
+/*# sourceMappingURL=index.css.map */
